@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+#navbar #lang-icon {
+  position: relative;
+  color: currentColor !important;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: background-color .4s ease-in-out;
+}
+
+#navbar #lang-icon:hover {
+  background-color: #4670920b;
+  cursor: pointer;
+}
+
+#navbar #lang-icon svg {
+  transition: opacity .2s ease-in-out;
+  width: 22px;
+}
+
+#navbar #lang-icon section {
+  cursor: default;
+}
+
+#lang-icon:not(.active) #change_lang_bc {
+  display: none !important;
+}
+
+#change_lang_bc {
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+}
+
+#lang-icon:not(.active) #change_lang {
+  display: none !important;
+}
+
+#change_lang {
+  position: absolute;
+  z-index: 50;
+  top: 100%;
+  right: 0;
+  background-color: var(--theme-change-color);
+  border-radius: .5rem;
+  width: 144px;
+  height: 80px;
+  margin-top: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  --tmp-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, .1),
+    0 4px 6px -4px rgba(0, 0, 0, .1);
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, .1),
+    0 0 0 0px #fff,
+    var(--tmp-shadow, 0 0 #0000);
+}
+
+#change_lang input[type="radio"] {
+  display: none !important;
+}
+
+#change_lang input[type="radio"]:checked + label {
+  background-color: rgba(120, 120, 120, 0.06);
+  color: #10a8ee !important;
+  cursor: default !important;
+  opacity: 0.9 !important;
+}
+
+#change_lang input[type="radio"]:checked + label svg {
+  fill: #10a8ee !important;
+}
+
+#change_lang label {
+  width: 99%;
+  padding: 5px 10px;
+  height: calc(100% / 2);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;
+  opacity: 0.78;
+  transition: opacity .2s ease-in-out;
+}
+
+#change_lang label:hover {
+  background-color: rgba(120, 120, 120, 0.04);
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+#change_lang label svg {
+  width: 20px;
+  height: 20px;
+}
+
+#change_lang label span {
+  font-size: 15.7px;
+  font-weight: 400;
+  margin-left: 12px;
+}
+
+[lang="en"] #fa_lang_icon {
+  display: none !important;
+}
+
+[lang]:not([lang="en"]) #en_lang_icon {
+  display: none !important;
+}
+
+[lang="en"] .lang-fa {
+  display: none !important;
+}
+
+[lang="en"] .dir-auto {
+  direction: ltr !important;
+}
+
+[lang]:not([lang="en"]) .lang-en {
+  display: none !important;
+}
+
+[lang]:not([lang="en"]) .dir-auto {
+  direction: rtl !important;
+}
+
+@font-face {
+  font-family: "Iran Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Open Sans', 'Rubik', Arial, sans-serif;;
+  src: url("https://msfpt.github.io//assets/css/base/fonts/iran-sans-web.woff2");
+}
+
+[lang]:not([lang="en"]) .lang-fa {
+  font-family: "Iran Sans";
+}

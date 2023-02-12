@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+@import url("https://msfpt.github.io//assets/css/main.css");
+@import url("./lang.css");
+@import url("./page.css");
+
+body:not(.loading) #loading {
+  display: none !important;
+}
+
+body.loading {
+  overflow: hidden !important;
+}
+
+#loading {
+  box-shadow: inset 0 100px 50px var(--bg-color), inset 0 0 10px 30px var(--bg-color);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMicgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJyBmaWxsPSdub25lJyBzdHJva2U9J3JnYigxNDggMTYzIDE4NCAvIDAuMDUpJz48cGF0aCBkPSdNMCAuNUgzMS41VjMyJy8+PC9zdmc+");
+  background-color: var(--bg-color);
+  position: fixed;
+  z-index: 20000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+[page="create-telegram-bot"] {
+  padding-top: 60px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#link-list {
+  list-style: none !important;
+  background-color: var(--cover-card-bg-color);
+  min-width: 260px;
+  width: calc(100vw - 50px);
+  max-width: 640px;
+  min-height: 136px;
+  max-height: calc(100vh - 140px);
+  padding: 2px 0 !important;
+  border-radius: 2.5px;
+  overflow: hidden auto;
+  box-shadow: 0 0 0 1px rgb(15 23 42 / 10%), 0 0 0 0px #fff;
+}
+
+@media screen and (max-width: 290px) {
+  #link-list {
+    width: 100vw;
+    border-radius: 0px;
+    max-height: calc(100vh - 60px);
+    box-shadow: none !important;
+  }
+}
+
+#link-list {
+  --scrollbar-background-color: var(--cover-card-bg-color);
+  --scrollbar-color: #a09f9fc9;
+  --scrollbar-track-rounded: 0;
+  --scrollbar-thumb-rounded: 100px;
+  --scrollbar-padding: 3px;
+  --scrollbar-width: 7px;
+}
+
+#link-list .item {
+  width: 100%;
+  min-height: 45px;
+  border-bottom: 1px solid rgba(144, 154, 180, 0.1);
+}
+
+#link-list .item a {
+  text-decoration: none;
+  color: var(--color);
+}
+
+#link-list .item a div {
+  width: 100%;
+  min-height: 45px;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  line-height: 30px;
+  padding: 14px;
+}
+
+#link-list .item:last-child {
+  border: none !important;
+}
